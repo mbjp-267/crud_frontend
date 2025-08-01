@@ -8,10 +8,11 @@ const [email, setEmail] = useState("");
 const [gender, setGender] = useState("Male");
 const navigate = useNavigate();
 const { id } = useParams();
+const API = import.meta.env.VITE_API_BASE_URL;
 
 const getUserById = useCallback(async () => {
     try {
-    const response = await axios.get(`http://localhost:5000/users/${id}`);
+    const response = await axios.get(`${API}/users/${id}`);
     setName(response.data.name || "");
     setEmail(response.data.email || "");
     setGender(response.data.gender || "Male");
