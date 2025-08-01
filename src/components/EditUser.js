@@ -8,7 +8,7 @@ const [email, setEmail] = useState("");
 const [gender, setGender] = useState("Male");
 const navigate = useNavigate();
 const { id } = useParams();
-const API = import.meta.env.VITE_API_BASE_URL;
+const API = process.env.REACT_APP_API_BASE_URL;
 
 const getUserById = useCallback(async () => {
     try {
