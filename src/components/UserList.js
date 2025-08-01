@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 const UserList = () => {
 const [users, setUser] = useState([]);
+const API = import.meta.env.VITE_API_BASE_URL;
 
 useEffect(() => {
     getUsers();
@@ -12,7 +13,7 @@ useEffect(() => {
 
 const getUsers = async () => {
     try {
-    const response = await axios.get("http://localhost:5000/users");
+    const response = await axios.get(`${API}/users`);
     setUser(response.data);
     } catch (error) {
     console.log("Failed to fetch users:", error);
