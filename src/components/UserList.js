@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const UserList = () => {
 const [users, setUser] = useState([]);
-const API = import.meta.env.VITE_API_BASE_URL;
+const API = process.env.REACT_APP_API_BASE_URL;
 
 useEffect(() => {
     getUsers();
