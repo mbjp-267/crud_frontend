@@ -12,7 +12,7 @@ const API = import.meta.env.VITE_API_BASE_URL;
 const saveUser = async (e) => {
     e.preventDefault();
     try {
-        await axios.post('http://localhost:5000/users', {
+        await axios.post(`${API}/users`, {
             name,
             email,
             gender
