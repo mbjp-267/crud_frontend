@@ -7,7 +7,7 @@ const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [gender, setGender] = useState("Male");
 const navigate = useNavigate();
-const API = import.meta.env.VITE_API_BASE_URL;
+const API = process.env.REACT_APP_API_BASE_URL;
 
 const saveUser = async (e) => {
     e.preventDefault();
