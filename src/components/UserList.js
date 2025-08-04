@@ -13,7 +13,10 @@ useEffect(() => {
 
 const getUsers = async () => {
     try {
-    const response = await axios.get(`${API}/users`);
+    const response = await axios.get(`${API}/users`, {
+  withCredentials: true
+});
+;
     setUser(response.data);
     } catch (error) {
     console.log("Failed to fetch users:", error);
@@ -27,14 +30,16 @@ const deleteUser = async (id) => {
     text: "Data tidak dapat dikembalikan!",
     icon: "warning",
     showCancelButton: true,
-      confirmButtonColor: "#e3342f", // merah
+    confirmButtonColor: "#e3342f", // merah
     cancelButtonColor: "#6c757d",
     confirmButtonText: "Ya, hapus!",
     cancelButtonText: "Batal"
     }).then(async (result) => {
     if (result.isConfirmed) {
         try {
-        await axios.delete(`${API}/users/${id}`);
+        await axios.delete(`${API}/users/${id}`, {
+  withCredentials: true
+});
           getUsers(); // refresh
         Swal.fire("Dihapus!", "User berhasil dihapus.", "success");
         } catch (error) {
