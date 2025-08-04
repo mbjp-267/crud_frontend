@@ -34,7 +34,7 @@ const deleteUser = async (id) => {
     }).then(async (result) => {
     if (result.isConfirmed) {
         try {
-        await axios.delete(`http://localhost:5000/users/${id}`);
+        await axios.delete(`${API}/users/${id}`);
           getUsers(); // refresh
         Swal.fire("Dihapus!", "User berhasil dihapus.", "success");
         } catch (error) {
